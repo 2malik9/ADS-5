@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include "tstack.h"
+#include <stack>
 
 int getPriority(char op) {
     if (op == '(' || op == ')') return 0;
