@@ -1,6 +1,7 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
+#include <stdexcept>
 
 template <typename T, int size>
 class TStack {
@@ -24,7 +25,7 @@ public:
             top++;
             stack[top] = value;
         } else {
-            throw overflow_error("Stack is full");
+            throw std::runtime_error("Stack is full");
         }
     }
 
@@ -34,7 +35,7 @@ public:
             top--;
             return value;
         } else {
-            throw underflow_error("Stack is empty");
+            throw std::runtime_error("Stack is empty");
         }
     }
 
@@ -42,10 +43,9 @@ public:
         if (!isEmpty()) {
             return stack[top];
         } else {
-            throw underflow_error("Stack is empty");
+            throw std::runtime_error("Stack is empty");
         }
     }
 };
-
 
 #endif  // INCLUDE_TSTACK_H_
