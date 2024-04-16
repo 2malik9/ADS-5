@@ -24,7 +24,7 @@ public:
             top++;
             stack[top] = value;
         } else {
-            throw std::overflow_error("Stack is full");
+            throw overflow_error("Stack is full");
         }
     }
 
@@ -34,7 +34,7 @@ public:
             top--;
             return value;
         } else {
-            throw std::underflow_error("Stack is empty");
+            throw underflow_error("Stack is empty");
         }
     }
 
@@ -42,7 +42,7 @@ public:
         if (!isEmpty()) {
             return stack[top];
         } else {
-            throw std::underflow_error("Stack is empty");
+            throw underflow_error("Stack is empty");
         }
     }
 };
